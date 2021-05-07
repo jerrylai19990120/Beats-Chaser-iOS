@@ -61,6 +61,10 @@
 		929A97FE2645FC8B00467CF7 /* Beats Chaser */ = {
 			isa = PBXGroup;
 			children = (
+				929A981D2645FFBA00467CF7 /* Service */,
+				929A981C2645FFB000467CF7 /* Models */,
+				929A981B2645FFA700467CF7 /* ViewControllers */,
+				929A981A2645FF9F00467CF7 /* Views */,
 				929A97FF2645FC8B00467CF7 /* AppDelegate.h */,
 				929A98002645FC8B00467CF7 /* AppDelegate.m */,
 				929A98022645FC8B00467CF7 /* SceneDelegate.h */,
@@ -74,6 +78,34 @@
 				929A98112645FC8D00467CF7 /* main.m */,
 			);
 			path = "Beats Chaser";
+			sourceTree = "<group>";
+		};
+		929A981A2645FF9F00467CF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		929A981B2645FFA700467CF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		929A981C2645FFB000467CF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		929A981D2645FFBA00467CF7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,7 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry-lai.Beats-Chaser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +352,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry-lai.Beats-Chaser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
