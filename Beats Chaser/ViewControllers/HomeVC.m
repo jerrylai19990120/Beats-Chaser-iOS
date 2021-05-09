@@ -1,17 +1,17 @@
 //
-//  ViewController.m
+//  HomeVC.m
 //  Beats Chaser
 //
 //  Created by Jerry Lai on 2021-05-07.
 //
 
-#import "ViewController.h"
+#import "HomeVC.h"
 
-@interface ViewController ()
+@interface HomeVC ()
 
 @end
 
-@implementation ViewController
+@implementation HomeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
