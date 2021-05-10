@@ -15,6 +15,8 @@
 		929A980F2645FC8D00467CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929A980D2645FC8D00467CF7 /* LaunchScreen.storyboard */; };
 		929A98122645FC8D00467CF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A98112645FC8D00467CF7 /* main.m */; };
 		92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CF62648C78100899DEF /* RoundedCornerView.m */; };
+		92B69CFC2649F95900899DEF /* CircularImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CFB2649F95900899DEF /* CircularImage.m */; };
+		92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CFF2649FA1600899DEF /* HomeViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		929A98112645FC8D00467CF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92B69CF52648C78100899DEF /* RoundedCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerView.h; sourceTree = "<group>"; };
 		92B69CF62648C78100899DEF /* RoundedCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerView.m; sourceTree = "<group>"; };
+		92B69CFA2649F95900899DEF /* CircularImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularImage.h; sourceTree = "<group>"; };
+		92B69CFB2649F95900899DEF /* CircularImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularImage.m; sourceTree = "<group>"; };
+		92B69CFE2649FA1600899DEF /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
+		92B69CFF2649FA1600899DEF /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 			children = (
 				92B69CF52648C78100899DEF /* RoundedCornerView.h */,
 				92B69CF62648C78100899DEF /* RoundedCornerView.m */,
+				92B69CFA2649F95900899DEF /* CircularImage.h */,
+				92B69CFB2649F95900899DEF /* CircularImage.m */,
+				92B69CFE2649FA1600899DEF /* HomeViewCell.h */,
+				92B69CFF2649FA1600899DEF /* HomeViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,9 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B69CFC2649F95900899DEF /* CircularImage.m in Sources */,
 				929A98072645FC8B00467CF7 /* HomeVC.m in Sources */,
 				929A98012645FC8B00467CF7 /* AppDelegate.m in Sources */,
 				929A98122645FC8D00467CF7 /* main.m in Sources */,
+				92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */,
 				92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */,
 				929A98042645FC8B00467CF7 /* SceneDelegate.m in Sources */,
 			);
