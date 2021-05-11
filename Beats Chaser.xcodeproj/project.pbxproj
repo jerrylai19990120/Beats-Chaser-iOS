@@ -17,6 +17,9 @@
 		92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CF62648C78100899DEF /* RoundedCornerView.m */; };
 		92B69CFC2649F95900899DEF /* CircularImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CFB2649F95900899DEF /* CircularImage.m */; };
 		92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69CFF2649FA1600899DEF /* HomeViewCell.m */; };
+		92B69D04264A57F400899DEF /* TopHitsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D03264A57F400899DEF /* TopHitsCell.m */; };
+		92B69D08264A5B6E00899DEF /* CurrentSongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D07264A5B6E00899DEF /* CurrentSongVC.m */; };
+		92B69D0C264A61A200899DEF /* RoundedCornerOutlinedBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,12 @@
 		92B69CFB2649F95900899DEF /* CircularImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularImage.m; sourceTree = "<group>"; };
 		92B69CFE2649FA1600899DEF /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		92B69CFF2649FA1600899DEF /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
+		92B69D02264A57F400899DEF /* TopHitsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopHitsCell.h; sourceTree = "<group>"; };
+		92B69D03264A57F400899DEF /* TopHitsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopHitsCell.m; sourceTree = "<group>"; };
+		92B69D06264A5B6E00899DEF /* CurrentSongVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentSongVC.h; sourceTree = "<group>"; };
+		92B69D07264A5B6E00899DEF /* CurrentSongVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentSongVC.m; sourceTree = "<group>"; };
+		92B69D0A264A61A200899DEF /* RoundedCornerOutlinedBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerOutlinedBtn.h; sourceTree = "<group>"; };
+		92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerOutlinedBtn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,10 @@
 				92B69CFB2649F95900899DEF /* CircularImage.m */,
 				92B69CFE2649FA1600899DEF /* HomeViewCell.h */,
 				92B69CFF2649FA1600899DEF /* HomeViewCell.m */,
+				92B69D02264A57F400899DEF /* TopHitsCell.h */,
+				92B69D03264A57F400899DEF /* TopHitsCell.m */,
+				92B69D0A264A61A200899DEF /* RoundedCornerOutlinedBtn.h */,
+				92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +118,8 @@
 			children = (
 				929A98052645FC8B00467CF7 /* HomeVC.h */,
 				929A98062645FC8B00467CF7 /* HomeVC.m */,
+				92B69D06264A5B6E00899DEF /* CurrentSongVC.h */,
+				92B69D07264A5B6E00899DEF /* CurrentSongVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,9 +210,12 @@
 				92B69CFC2649F95900899DEF /* CircularImage.m in Sources */,
 				929A98072645FC8B00467CF7 /* HomeVC.m in Sources */,
 				929A98012645FC8B00467CF7 /* AppDelegate.m in Sources */,
+				92B69D04264A57F400899DEF /* TopHitsCell.m in Sources */,
 				929A98122645FC8D00467CF7 /* main.m in Sources */,
 				92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */,
 				92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */,
+				92B69D0C264A61A200899DEF /* RoundedCornerOutlinedBtn.m in Sources */,
+				92B69D08264A5B6E00899DEF /* CurrentSongVC.m in Sources */,
 				929A98042645FC8B00467CF7 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
