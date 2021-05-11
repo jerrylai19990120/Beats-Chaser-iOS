@@ -32,7 +32,16 @@
     [self.underline layoutIfNeeded];
     
     [self setupAttributedPlaceholder];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tap];
 }
+
+- (void)dismissKeyboard{
+    [self.searchTxtField resignFirstResponder];
+}
+
 
 //collection view delegate methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

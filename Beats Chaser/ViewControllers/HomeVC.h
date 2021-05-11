@@ -10,6 +10,7 @@
 @interface HomeVC : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthCons;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *view;
 
 @property (weak, nonatomic) IBOutlet UIView *underline;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;

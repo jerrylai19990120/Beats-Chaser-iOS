@@ -397,6 +397,7 @@
                         <outlet property="segmentedControl" destination="j4S-Dc-9d2" id="hUj-qR-2lN"/>
                         <outlet property="tableView" destination="Dam-je-UML" id="8IQ-Jc-10R"/>
                         <outlet property="underline" destination="pNI-ng-37V" id="XTJ-wu-ddR"/>
+                        <outlet property="view" destination="TwI-PF-con" id="QQ7-xG-N0r"/>
                         <outlet property="widthCons" destination="40b-uC-ac2" id="cyb-cC-QjV"/>
                     </connections>
                 </viewController>
