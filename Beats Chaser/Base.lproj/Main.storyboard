@@ -252,6 +252,14 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNI-ng-37V">
+                                        <rect key="frame" x="28" y="353" width="177" height="4"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.56862745100000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="177" id="40b-uC-ac2"/>
+                                            <constraint firstAttribute="height" constant="4" id="vwb-Ad-pzM"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -259,6 +267,7 @@
                                     <constraint firstAttribute="bottom" secondItem="fF4-yi-vcA" secondAttribute="bottom" id="2Pa-zR-AAF"/>
                                     <constraint firstItem="OrB-DR-Rnh" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" constant="28" id="9yu-Uc-669"/>
                                     <constraint firstItem="j4S-Dc-9d2" firstAttribute="top" secondItem="OrB-DR-Rnh" secondAttribute="bottom" constant="26" id="EvO-do-3eG"/>
+                                    <constraint firstItem="pNI-ng-37V" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" constant="28" id="H4V-Fp-NMz"/>
                                     <constraint firstAttribute="trailing" secondItem="3kF-Sx-Nsx" secondAttribute="trailing" constant="26" id="HB3-DS-uAK"/>
                                     <constraint firstItem="3kF-Sx-Nsx" firstAttribute="centerY" secondItem="eQ7-S3-ZqF" secondAttribute="centerY" id="JNJ-It-KlM"/>
                                     <constraint firstItem="eQ7-S3-ZqF" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" constant="28" id="RZV-eG-dzP"/>
@@ -270,10 +279,11 @@
                                     <constraint firstAttribute="trailing" secondItem="j4S-Dc-9d2" secondAttribute="trailing" constant="27" id="huf-tg-4wX"/>
                                     <constraint firstAttribute="trailing" secondItem="oUS-P1-arJ" secondAttribute="trailing" constant="27" id="nQy-Bs-RjK"/>
                                     <constraint firstItem="fF4-yi-vcA" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" id="oCV-jm-kum"/>
+                                    <constraint firstItem="oUS-P1-arJ" firstAttribute="top" secondItem="pNI-ng-37V" secondAttribute="bottom" constant="12" id="p4W-y4-9cL"/>
                                     <constraint firstItem="K0d-6g-h3d" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" constant="28" id="r2n-Mn-E3i"/>
                                     <constraint firstItem="oUS-P1-arJ" firstAttribute="leading" secondItem="TwI-PF-con" secondAttribute="leading" constant="27" id="rZA-BG-L6i"/>
                                     <constraint firstAttribute="trailing" secondItem="OrB-DR-Rnh" secondAttribute="trailing" constant="26" id="v1h-oz-Tnm"/>
-                                    <constraint firstItem="oUS-P1-arJ" firstAttribute="top" secondItem="j4S-Dc-9d2" secondAttribute="bottom" constant="16" id="ydh-mj-T4o"/>
+                                    <constraint firstItem="pNI-ng-37V" firstAttribute="top" secondItem="j4S-Dc-9d2" secondAttribute="bottom" id="yia-hd-d4s"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -292,6 +302,8 @@
                         <outlet property="favoriteBtn" destination="qzs-QA-TZP" id="lSa-Vv-vvB"/>
                         <outlet property="homeBtn" destination="LKs-an-gS2" id="kXi-xK-ECC"/>
                         <outlet property="segmentedControl" destination="j4S-Dc-9d2" id="hUj-qR-2lN"/>
+                        <outlet property="underline" destination="pNI-ng-37V" id="XTJ-wu-ddR"/>
+                        <outlet property="widthCons" destination="40b-uC-ac2" id="cyb-cC-QjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
