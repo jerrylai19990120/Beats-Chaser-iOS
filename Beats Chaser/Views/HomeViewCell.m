@@ -9,4 +9,9 @@
 
 @implementation HomeViewCell
 
+- (void)configureCell{
+    self.categoryTxt.text = @"R&B Soul";
+    self.categoryImg.image = [UIImage imageNamed:@"cover"];
+}
+
 @end
