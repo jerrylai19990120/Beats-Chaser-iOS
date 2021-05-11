@@ -30,6 +30,8 @@
     self.xPosition = self.segmentedControl.layer.frame.origin.x;
     self.widthCons.constant = [UIScreen mainScreen].bounds.size.width/2 - 28;
     [self.underline layoutIfNeeded];
+    
+    [self setupAttributedPlaceholder];
 }
 
 //collection view delegate methods
@@ -54,7 +56,7 @@
 }
 
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl{
-    [segmentedControl setBackgroundColor:[[UIColor alloc]initWithRed:244/255 green:145/255 blue:60/255 alpha:1]];
+    [segmentedControl setBackgroundColor:[UIColor blackColor]];
     [segmentedControl setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateNormal];
     [segmentedControl setSelectedSegmentTintColor:[[UIColor alloc]initWithRed:244/255 green:145/255 blue:60/255 alpha:1]];
     
@@ -104,5 +106,8 @@
     return 1;
 }
 
+- (void)setupAttributedPlaceholder{
+    self.searchTxtField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"Search" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+}
 
 @end

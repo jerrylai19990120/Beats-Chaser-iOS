@@ -193,6 +193,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="2uD-4Z-2wx"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.95686274510000002" green="0.56862745100000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -392,6 +393,7 @@
                         <outlet property="collectionView" destination="oUS-P1-arJ" id="huL-V6-m8V"/>
                         <outlet property="favoriteBtn" destination="qzs-QA-TZP" id="lSa-Vv-vvB"/>
                         <outlet property="homeBtn" destination="LKs-an-gS2" id="kXi-xK-ECC"/>
+                        <outlet property="searchTxtField" destination="HQ0-AR-pYs" id="L5E-Gb-dbI"/>
                         <outlet property="segmentedControl" destination="j4S-Dc-9d2" id="hUj-qR-2lN"/>
                         <outlet property="tableView" destination="Dam-je-UML" id="8IQ-Jc-10R"/>
                         <outlet property="underline" destination="pNI-ng-37V" id="XTJ-wu-ddR"/>
@@ -508,6 +510,9 @@
                             <constraint firstItem="Deq-di-NdC" firstAttribute="top" secondItem="vxa-aI-cyq" secondAttribute="bottom" constant="39" id="ste-i7-Kvp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bgView" destination="jXv-9R-hUA" id="8G9-l3-6YX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ6-Hn-P1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

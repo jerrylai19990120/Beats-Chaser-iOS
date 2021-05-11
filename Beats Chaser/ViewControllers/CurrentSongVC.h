@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CurrentSongVC : UIViewController
-
+@property (strong, nonatomic) IBOutlet UIView *bgView;
+- (void)setupBlurOverlayView;
 @end
 
 NS_ASSUME_NONNULL_END

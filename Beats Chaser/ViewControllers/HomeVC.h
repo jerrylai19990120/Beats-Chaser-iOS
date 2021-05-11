@@ -17,8 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIStackView *homeBtn;
 @property (weak, nonatomic) IBOutlet UIStackView *artistsBtn;
 @property (weak, nonatomic) IBOutlet UIStackView *favoriteBtn;
+@property (weak, nonatomic) IBOutlet UITextField *searchTxtField;
 @property (assign) CGFloat xPosition;
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl;
 - (void)moveUnderlineSegmentedControl;
+- (void)setupAttributedPlaceholder;
 @end
 
