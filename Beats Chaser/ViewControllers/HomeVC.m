@@ -23,7 +23,7 @@
     
     [self.segmentedControl addTarget:self action:@selector(moveUnderlineSegmentedControl) forControlEvents:UIControlEventValueChanged];
     self.xPosition = self.segmentedControl.layer.frame.origin.x;
-    self.widthCons.constant = (self.segmentedControl.layer.frame.size.width/2 - self.underline.layer.frame.size.width) + self.underline.layer.frame.size.width;
+    self.widthCons.constant = [UIScreen mainScreen].bounds.size.width/2 - 28;
     [self.underline layoutIfNeeded];
 }
 
