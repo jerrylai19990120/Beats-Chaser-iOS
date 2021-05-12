@@ -35,7 +35,63 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     tap.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:tap];
+    [self.homeView addGestureRecognizer:tap];
+    
+    //tab bar logic
+    self.selection = 0;
+    
+    UITapGestureRecognizer *homeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(homeBtnAction)];
+    homeTap.numberOfTapsRequired = 1;
+    [self.homeBtn addGestureRecognizer:homeTap];
+    
+    UITapGestureRecognizer *browseTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(browseBtnAction)];
+    browseTap.numberOfTapsRequired = 1;
+    [self.browseBtn addGestureRecognizer:browseTap];
+    
+    UITapGestureRecognizer *favoriteTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(favoriteBtnAction)];
+    favoriteTap.numberOfTapsRequired = 1;
+    [self.favoriteBtn addGestureRecognizer:favoriteTap];
+
+}
+
+- (void)browseBtnAction{
+    self.selection = 1;
+    [self.homeView setHidden:true];
+    [self.favoriteView setHidden:true];
+    [self.browseView setHidden:false];
+    self.browseBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
+    self.browseBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
+    self.favoriteBtnTxt.textColor = [UIColor darkGrayColor];
+    self.favoriteBtnImg.tintColor = [UIColor darkGrayColor];
+    self.homeBtnTxt.textColor = [UIColor darkGrayColor];
+    self.homeBtnImg.tintColor = [UIColor darkGrayColor];
+}
+
+
+- (void)favoriteBtnAction{
+    self.selection = 2;
+    [self.homeView setHidden:true];
+    [self.browseView setHidden:true];
+    [self.favoriteView setHidden:false];
+    self.favoriteBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
+    self.favoriteBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
+    self.homeBtnTxt.textColor = [UIColor darkGrayColor];
+    self.homeBtnImg.tintColor = [UIColor darkGrayColor];
+    self.browseBtnTxt.textColor = [UIColor darkGrayColor];
+    self.browseBtnImg.tintColor = [UIColor darkGrayColor];
+}
+
+- (void)homeBtnAction{
+    self.selection = 0;
+    [self.browseView setHidden:true];
+    [self.favoriteView setHidden:true];
+    [self.homeView setHidden:false];
+    self.homeBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
+    self.homeBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
+    self.browseBtnTxt.textColor = [UIColor darkGrayColor];
+    self.browseBtnImg.tintColor = [UIColor darkGrayColor];
+    self.favoriteBtnTxt.textColor = [UIColor darkGrayColor];
+    self.favoriteBtnImg.tintColor = [UIColor darkGrayColor];
 }
 
 - (void)dismissKeyboard{
