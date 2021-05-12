@@ -20,6 +20,9 @@
 		92B69D04264A57F400899DEF /* TopHitsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D03264A57F400899DEF /* TopHitsCell.m */; };
 		92B69D08264A5B6E00899DEF /* CurrentSongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D07264A5B6E00899DEF /* CurrentSongVC.m */; };
 		92B69D0C264A61A200899DEF /* RoundedCornerOutlinedBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */; };
+		92B69D17264C859600899DEF /* ArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D16264C859600899DEF /* ArtistCell.m */; };
+		92B69D1B264C8B5400899DEF /* RecentPlayedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D1A264C8B5400899DEF /* RecentPlayedCell.m */; };
+		92B69D1F264C8C4200899DEF /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D1E264C8C4200899DEF /* FavoriteCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,12 @@
 		92B69D07264A5B6E00899DEF /* CurrentSongVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentSongVC.m; sourceTree = "<group>"; };
 		92B69D0A264A61A200899DEF /* RoundedCornerOutlinedBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerOutlinedBtn.h; sourceTree = "<group>"; };
 		92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerOutlinedBtn.m; sourceTree = "<group>"; };
+		92B69D15264C859600899DEF /* ArtistCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtistCell.h; sourceTree = "<group>"; };
+		92B69D16264C859600899DEF /* ArtistCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistCell.m; sourceTree = "<group>"; };
+		92B69D19264C8B5400899DEF /* RecentPlayedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecentPlayedCell.h; sourceTree = "<group>"; };
+		92B69D1A264C8B5400899DEF /* RecentPlayedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecentPlayedCell.m; sourceTree = "<group>"; };
+		92B69D1D264C8C4200899DEF /* FavoriteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
+		92B69D1E264C8C4200899DEF /* FavoriteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,12 @@
 				92B69D03264A57F400899DEF /* TopHitsCell.m */,
 				92B69D0A264A61A200899DEF /* RoundedCornerOutlinedBtn.h */,
 				92B69D0B264A61A200899DEF /* RoundedCornerOutlinedBtn.m */,
+				92B69D15264C859600899DEF /* ArtistCell.h */,
+				92B69D16264C859600899DEF /* ArtistCell.m */,
+				92B69D19264C8B5400899DEF /* RecentPlayedCell.h */,
+				92B69D1A264C8B5400899DEF /* RecentPlayedCell.m */,
+				92B69D1D264C8C4200899DEF /* FavoriteCell.h */,
+				92B69D1E264C8C4200899DEF /* FavoriteCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,8 +230,11 @@
 				92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */,
 				92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */,
 				92B69D0C264A61A200899DEF /* RoundedCornerOutlinedBtn.m in Sources */,
+				92B69D1F264C8C4200899DEF /* FavoriteCell.m in Sources */,
 				92B69D08264A5B6E00899DEF /* CurrentSongVC.m in Sources */,
+				92B69D1B264C8B5400899DEF /* RecentPlayedCell.m in Sources */,
 				929A98042645FC8B00467CF7 /* SceneDelegate.m in Sources */,
+				92B69D17264C859600899DEF /* ArtistCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

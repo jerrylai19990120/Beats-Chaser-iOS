@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *favoriteView;
 @property (weak, nonatomic) IBOutlet UIView *browseView;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *artistsCollectionView;
 @property (weak, nonatomic) IBOutlet UIStackView *browseBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *underline;
