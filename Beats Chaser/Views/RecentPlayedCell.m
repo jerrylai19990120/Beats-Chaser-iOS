@@ -9,4 +9,10 @@
 
 @implementation RecentPlayedCell
 
+- (void)configureCell{
+    self.coverImg.image = [UIImage imageNamed:@"cover2"];
+    self.artistNameTxt.text = @"Summer Walker";
+    self.songNameTxt.text = @"Come Thru";
+}
+
 @end

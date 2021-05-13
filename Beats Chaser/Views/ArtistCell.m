@@ -9,4 +9,10 @@
 
 @implementation ArtistCell
 
+- (void)configureCell{
+    self.coverImg.image = [UIImage imageNamed:@"cover4"];
+    self.artistNameTxt.text = @"Doja Cat Ft. Sza";
+    self.genreTxt.text = @"R&B";
+}
+
 @end

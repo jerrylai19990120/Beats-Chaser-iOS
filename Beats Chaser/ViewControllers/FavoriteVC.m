@@ -8,6 +8,7 @@
 #import "FavoriteVC.h"
 #import "HomeVC.h"
 #import "BrowseVC.h"
+#import "FavoriteCell.h"
 
 @interface FavoriteVC ()
 
@@ -25,6 +26,9 @@
     UITapGestureRecognizer *browseTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(browseBtnAction)];
     browseTap.numberOfTapsRequired = 1;
     [self.browseBtn addGestureRecognizer:browseTap];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)browseBtnAction{
@@ -41,6 +45,25 @@
     homeVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:homeVC animated:false completion:nil];
     
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 8;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    FavoriteCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteCell"];
+    
+    if(cell!=nil){
+        [cell configureCell];
+        return cell;
+    }else{
+        return cell;
+    }
 }
 
 @end

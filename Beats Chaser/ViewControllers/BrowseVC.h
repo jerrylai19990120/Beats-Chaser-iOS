@@ -9,8 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BrowseVC : UIViewController
+@interface BrowseVC : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIStackView *homeBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *artistCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *recentCollectionView;
 @property (weak, nonatomic) IBOutlet UIStackView *favoriteBtn;
 @end
 

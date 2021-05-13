@@ -9,9 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FavoriteVC : UIViewController
+@interface FavoriteVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIStackView *homeBtn;
 @property (weak, nonatomic) IBOutlet UIStackView *browseBtn;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

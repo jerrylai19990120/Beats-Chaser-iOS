@@ -10,7 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RecentPlayedCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *coverImg;
+@property (weak, nonatomic) IBOutlet UILabel *songNameTxt;
+@property (weak, nonatomic) IBOutlet UILabel *artistNameTxt;
+- (void)configureCell;
 @end
 
 NS_ASSUME_NONNULL_END

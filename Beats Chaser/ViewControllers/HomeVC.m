@@ -93,9 +93,6 @@
 }
 
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
 
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl{
     [segmentedControl setBackgroundColor:[UIColor blackColor]];

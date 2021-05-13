@@ -8,6 +8,8 @@
 #import "BrowseVC.h"
 #import "HomeVC.h"
 #import "FavoriteVC.h"
+#import "ArtistCell.h"
+#import "RecentPlayedCell.h"
 
 @interface BrowseVC ()
 
@@ -26,6 +28,12 @@
     UITapGestureRecognizer *favoriteTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(favoriteBtnAction)];
     favoriteTap.numberOfTapsRequired = 1;
     [self.favoriteBtn addGestureRecognizer:favoriteTap];
+    
+    self.artistCollectionView.delegate = self;
+    self.artistCollectionView.dataSource = self;
+    
+    self.recentCollectionView.delegate = self;
+    self.recentCollectionView.dataSource = self;
 }
 
 - (void)homeBtnAction{
@@ -44,4 +52,29 @@
     
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 8;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(collectionView == self.artistCollectionView){
+        ArtistCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
+        if(cell!=nil){
+            [cell configureCell];
+            return cell;
+        }else{
+            return cell;
+        }
+    }else if(collectionView == self.recentCollectionView){
+        RecentPlayedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecentPlayedCell" forIndexPath:indexPath];
+        if(cell!=nil){
+            [cell configureCell];
+            return cell;
+        }else{
+            return cell;
+        }
+    }else{
+        return [[UICollectionViewCell alloc]initWithFrame:CGRectZero];
+    }
+}
 @end
