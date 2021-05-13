@@ -11,16 +11,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthCons;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *homeView;
-@property (weak, nonatomic) IBOutlet UIView *favoriteView;
-@property (weak, nonatomic) IBOutlet UIView *browseView;
-
-@property (weak, nonatomic) IBOutlet UICollectionView *artistsCollectionView;
 @property (weak, nonatomic) IBOutlet UIStackView *browseBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *underline;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIStackView *homeBtn;
 @property (weak, nonatomic) IBOutlet UIStackView *favoriteBtn;
 @property (weak, nonatomic) IBOutlet UITextField *searchTxtField;
 @property (assign) CGFloat xPosition;
@@ -33,6 +28,5 @@
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl;
 - (void)moveUnderlineSegmentedControl;
 - (void)setupAttributedPlaceholder;
-@property (assign) int selection;
 @end
 

@@ -20,4 +20,10 @@
     // Configure the view for the selected state
 }
 
+- (void)configureCell{
+    self.artistTxt.text = @"Sza";
+    self.songNameTxt.text = @"The Weekend";
+    self.coverImg.image = [UIImage imageNamed:@"cover3"];
+}
+
 @end

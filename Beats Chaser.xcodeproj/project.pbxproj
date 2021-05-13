@@ -23,6 +23,8 @@
 		92B69D17264C859600899DEF /* ArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D16264C859600899DEF /* ArtistCell.m */; };
 		92B69D1B264C8B5400899DEF /* RecentPlayedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D1A264C8B5400899DEF /* RecentPlayedCell.m */; };
 		92B69D1F264C8C4200899DEF /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D1E264C8C4200899DEF /* FavoriteCell.m */; };
+		92B69D23264CA92F00899DEF /* BrowseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D22264CA92F00899DEF /* BrowseVC.m */; };
+		92B69D27264CA93E00899DEF /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D26264CA93E00899DEF /* FavoriteVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		92B69D1A264C8B5400899DEF /* RecentPlayedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecentPlayedCell.m; sourceTree = "<group>"; };
 		92B69D1D264C8C4200899DEF /* FavoriteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
 		92B69D1E264C8C4200899DEF /* FavoriteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
+		92B69D21264CA92F00899DEF /* BrowseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowseVC.h; sourceTree = "<group>"; };
+		92B69D22264CA92F00899DEF /* BrowseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowseVC.m; sourceTree = "<group>"; };
+		92B69D25264CA93E00899DEF /* FavoriteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
+		92B69D26264CA93E00899DEF /* FavoriteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,10 @@
 				929A98062645FC8B00467CF7 /* HomeVC.m */,
 				92B69D06264A5B6E00899DEF /* CurrentSongVC.h */,
 				92B69D07264A5B6E00899DEF /* CurrentSongVC.m */,
+				92B69D21264CA92F00899DEF /* BrowseVC.h */,
+				92B69D22264CA92F00899DEF /* BrowseVC.m */,
+				92B69D25264CA93E00899DEF /* FavoriteVC.h */,
+				92B69D26264CA93E00899DEF /* FavoriteVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,12 +238,14 @@
 				92B69D04264A57F400899DEF /* TopHitsCell.m in Sources */,
 				929A98122645FC8D00467CF7 /* main.m in Sources */,
 				92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */,
+				92B69D27264CA93E00899DEF /* FavoriteVC.m in Sources */,
 				92B69CF72648C78100899DEF /* RoundedCornerView.m in Sources */,
 				92B69D0C264A61A200899DEF /* RoundedCornerOutlinedBtn.m in Sources */,
 				92B69D1F264C8C4200899DEF /* FavoriteCell.m in Sources */,
 				92B69D08264A5B6E00899DEF /* CurrentSongVC.m in Sources */,
 				92B69D1B264C8B5400899DEF /* RecentPlayedCell.m in Sources */,
 				929A98042645FC8B00467CF7 /* SceneDelegate.m in Sources */,
+				92B69D23264CA92F00899DEF /* BrowseVC.m in Sources */,
 				92B69D17264C859600899DEF /* ArtistCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

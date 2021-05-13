@@ -8,6 +8,9 @@
 #import "HomeVC.h"
 #import "HomeViewCell.h"
 #import "TopHitsCell.h"
+#import "FavoriteCell.h"
+#import "BrowseVC.h"
+#import "FavoriteVC.h"
 
 @interface HomeVC ()
 
@@ -20,8 +23,10 @@
     // Do any additional setup after loading the view.
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
     [self configureSegmentedControl:self.segmentedControl];
     
     [self.segmentedControl addTarget:self action:@selector(moveUnderlineSegmentedControl) forControlEvents:UIControlEventValueChanged];
@@ -37,12 +42,6 @@
     tap.numberOfTapsRequired = 1;
     [self.homeView addGestureRecognizer:tap];
     
-    //tab bar logic
-    self.selection = 0;
-    
-    UITapGestureRecognizer *homeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(homeBtnAction)];
-    homeTap.numberOfTapsRequired = 1;
-    [self.homeBtn addGestureRecognizer:homeTap];
     
     UITapGestureRecognizer *browseTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(browseBtnAction)];
     browseTap.numberOfTapsRequired = 1;
@@ -55,44 +54,22 @@
 }
 
 - (void)browseBtnAction{
-    self.selection = 1;
-    [self.homeView setHidden:true];
-    [self.favoriteView setHidden:true];
-    [self.browseView setHidden:false];
-    self.browseBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
-    self.browseBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
-    self.favoriteBtnTxt.textColor = [UIColor darkGrayColor];
-    self.favoriteBtnImg.tintColor = [UIColor darkGrayColor];
-    self.homeBtnTxt.textColor = [UIColor darkGrayColor];
-    self.homeBtnImg.tintColor = [UIColor darkGrayColor];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BrowseVC *browseVC = [storyboard instantiateViewControllerWithIdentifier:@"BrowseVC"];
+    browseVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:browseVC animated:false completion:nil];
+    
 }
 
 
 - (void)favoriteBtnAction{
-    self.selection = 2;
-    [self.homeView setHidden:true];
-    [self.browseView setHidden:true];
-    [self.favoriteView setHidden:false];
-    self.favoriteBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
-    self.favoriteBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
-    self.homeBtnTxt.textColor = [UIColor darkGrayColor];
-    self.homeBtnImg.tintColor = [UIColor darkGrayColor];
-    self.browseBtnTxt.textColor = [UIColor darkGrayColor];
-    self.browseBtnImg.tintColor = [UIColor darkGrayColor];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FavoriteVC *favVC = [storyboard instantiateViewControllerWithIdentifier:@"FavoriteVC"];
+    favVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:favVC animated:false completion:nil];
+    
 }
 
-- (void)homeBtnAction{
-    self.selection = 0;
-    [self.browseView setHidden:true];
-    [self.favoriteView setHidden:true];
-    [self.homeView setHidden:false];
-    self.homeBtnTxt.textColor = [UIColor colorNamed:@"mainColor"];
-    self.homeBtnImg.tintColor = [UIColor colorNamed:@"mainColor"];
-    self.browseBtnTxt.textColor = [UIColor darkGrayColor];
-    self.browseBtnImg.tintColor = [UIColor darkGrayColor];
-    self.favoriteBtnTxt.textColor = [UIColor darkGrayColor];
-    self.favoriteBtnImg.tintColor = [UIColor darkGrayColor];
-}
 
 - (void)dismissKeyboard{
     [self.searchTxtField resignFirstResponder];
@@ -157,6 +134,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TopHitsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopHitsCell" forIndexPath:indexPath];
+       
     
     if(cell!=nil){
         [cell configureCell];
@@ -164,6 +142,8 @@
     }else{
         return cell;
     }
+    
+    
     
 }
 
