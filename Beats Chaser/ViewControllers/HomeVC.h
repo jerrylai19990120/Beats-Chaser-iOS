@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Song.h"
 @import AVFoundation;
 
 @interface HomeVC : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, AVAudioPlayerDelegate>
@@ -26,11 +27,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *browseBtnTxt;
 @property (weak, nonatomic) IBOutlet UIImageView *favoriteBtnImg;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteBtnTxt;
-@property (strong, nonatomic) AVAudioPlayer *player;
+@property (strong, nonatomic) AVQueuePlayer *player;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (assign) BOOL isPlaying;
+@property (assign) int currentPlaying;
+@property (strong, nonatomic) NSArray* songsList;
+@property (strong, nonatomic) NSArray* songs;
+@property (weak, nonatomic) IBOutlet UILabel *currSongName;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImg;
+@property (weak, nonatomic) IBOutlet UILabel *artistName;
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl;
 - (void)moveUnderlineSegmentedControl;
 - (void)setupAttributedPlaceholder;
+- (void)changeCurrentSongUIWithSong:(Song *)song;
 @end
 

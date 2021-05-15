@@ -463,8 +463,11 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come Thru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-PB-EsV">
-                                        <rect key="frame" x="115" y="23" width="87" height="20.5"/>
+                                        <rect key="frame" x="115" y="23" width="140" height="20.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="VtS-Mn-FAc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -494,7 +497,10 @@
                                             <constraint firstAttribute="width" constant="39" id="VtU-VK-wbz"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="xmark" catalog="system"/>
+                                        <state key="normal" image="chevron.right.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="nextBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2eR-GH-f5X"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfK-JG-7hM">
                                         <rect key="frame" x="17" y="0.0" width="238" height="83"/>
@@ -538,10 +544,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="artistName" destination="uP1-Ym-d5L" id="04J-3a-TAM"/>
                         <outlet property="browseBtn" destination="zT6-ED-tUa" id="B1V-ax-81e"/>
                         <outlet property="browseBtnImg" destination="7bb-Dn-bQB" id="rMR-63-1zj"/>
                         <outlet property="browseBtnTxt" destination="LGm-DD-D3B" id="Ixh-08-1P0"/>
                         <outlet property="collectionView" destination="oUS-P1-arJ" id="huL-V6-m8V"/>
+                        <outlet property="coverImg" destination="D66-N7-hft" id="78H-yq-UfI"/>
+                        <outlet property="currSongName" destination="oOU-PB-EsV" id="64f-tH-PlS"/>
                         <outlet property="favoriteBtn" destination="qzs-QA-TZP" id="lSa-Vv-vvB"/>
                         <outlet property="favoriteBtnImg" destination="fa9-yU-UZg" id="j0t-rQ-G6S"/>
                         <outlet property="favoriteBtnTxt" destination="bIE-Ug-zoq" id="1eF-94-Ynt"/>
@@ -1296,7 +1305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BAi-Lp-WD9"/>
+        <segue reference="DNs-Ez-jiO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left.circle" catalog="system" width="128" height="121"/>
