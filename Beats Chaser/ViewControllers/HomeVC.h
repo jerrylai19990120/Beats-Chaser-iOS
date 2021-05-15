@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import AVFoundation;
 
-@interface HomeVC : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface HomeVC : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, AVAudioPlayerDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthCons;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *homeView;
@@ -25,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *browseBtnTxt;
 @property (weak, nonatomic) IBOutlet UIImageView *favoriteBtnImg;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteBtnTxt;
+@property (strong, nonatomic) AVAudioPlayer *player;
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property (assign) BOOL isPlaying;
 - (void)configureSegmentedControl:(UISegmentedControl *)segmentedControl;
 - (void)moveUnderlineSegmentedControl;
 - (void)setupAttributedPlaceholder;

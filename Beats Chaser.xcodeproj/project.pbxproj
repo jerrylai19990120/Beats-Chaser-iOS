@@ -29,6 +29,9 @@
 		92CCC83C264FB4AC00051136 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC83B264FB4AC00051136 /* DataService.m */; };
 		92CCC840264FB6CA00051136 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC83F264FB6CA00051136 /* SearchVC.m */; };
 		92CCC844264FB95500051136 /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC843264FB95500051136 /* ResultCell.m */; };
+		92CCC84A26504BBD00051136 /* ImGonnaLove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CCC84726504BBC00051136 /* ImGonnaLove.mp3 */; };
+		92CCC84B26504BBD00051136 /* ComeThru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CCC84826504BBC00051136 /* ComeThru.mp3 */; };
+		92CCC84C26504BBD00051136 /* KissMore.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92CCC84926504BBD00051136 /* KissMore.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		92CCC83F264FB6CA00051136 /* SearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		92CCC842264FB95500051136 /* ResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
 		92CCC843264FB95500051136 /* ResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
+		92CCC84726504BBC00051136 /* ImGonnaLove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ImGonnaLove.mp3; sourceTree = "<group>"; };
+		92CCC84826504BBC00051136 /* ComeThru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ComeThru.mp3; sourceTree = "<group>"; };
+		92CCC84926504BBD00051136 /* KissMore.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = KissMore.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 		929A97FE2645FC8B00467CF7 /* Beats Chaser */ = {
 			isa = PBXGroup;
 			children = (
+				92CCC84926504BBD00051136 /* KissMore.mp3 */,
+				92CCC84726504BBC00051136 /* ImGonnaLove.mp3 */,
+				92CCC84826504BBC00051136 /* ComeThru.mp3 */,
 				929A981D2645FFBA00467CF7 /* Service */,
 				929A981C2645FFB000467CF7 /* Models */,
 				929A981B2645FFA700467CF7 /* ViewControllers */,
@@ -241,7 +250,10 @@
 			files = (
 				929A980F2645FC8D00467CF7 /* LaunchScreen.storyboard in Resources */,
 				929A980C2645FC8D00467CF7 /* Assets.xcassets in Resources */,
+				92CCC84A26504BBD00051136 /* ImGonnaLove.mp3 in Resources */,
 				929A980A2645FC8B00467CF7 /* Main.storyboard in Resources */,
+				92CCC84B26504BBD00051136 /* ComeThru.mp3 in Resources */,
+				92CCC84C26504BBD00051136 /* KissMore.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.4;
+				CURRENT_PROJECT_VERSION = 1.0.6;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.4;
+				CURRENT_PROJECT_VERSION = 1.0.6;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

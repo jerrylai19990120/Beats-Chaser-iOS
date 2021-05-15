@@ -12,6 +12,7 @@
 #import "BrowseVC.h"
 #import "FavoriteVC.h"
 #import "DataService.h"
+@import AVFoundation;
 
 @interface HomeVC ()
 
@@ -55,7 +56,14 @@
     self.searchTxtField.returnKeyType = UIReturnKeySearch;
     self.searchTxtField.enablesReturnKeyAutomatically = true;
     self.searchTxtField.delegate = self;
-
+    
+    NSString *sound = [[NSBundle mainBundle] pathForResource:@"ComeThru" ofType:@"mp3"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:sound];
+    NSError *__autoreleasing _Nullable err;
+    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:soundUrl error:&err];
+    self.player.delegate = self;
+    self.isPlaying = false;
+    self.player.numberOfLoops = 0;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -161,6 +169,20 @@
 
 - (void)setupAttributedPlaceholder{
     self.searchTxtField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"Search" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
+}
+
+
+- (IBAction)playBtnPressed:(id)sender {
+    if(self.isPlaying){
+        self.isPlaying = false;
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+        [self.player pause];
+    }else{
+        self.isPlaying = true;
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+        [self.player play];
+        
+    }
 }
 
 @end
