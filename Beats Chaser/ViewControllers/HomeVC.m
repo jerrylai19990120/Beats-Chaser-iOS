@@ -11,6 +11,7 @@
 #import "FavoriteCell.h"
 #import "BrowseVC.h"
 #import "FavoriteVC.h"
+#import "DataService.h"
 
 @interface HomeVC ()
 
@@ -50,7 +51,17 @@
     UITapGestureRecognizer *favoriteTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(favoriteBtnAction)];
     favoriteTap.numberOfTapsRequired = 1;
     [self.favoriteBtn addGestureRecognizer:favoriteTap];
+    
+    self.searchTxtField.returnKeyType = UIReturnKeySearch;
+    self.searchTxtField.enablesReturnKeyAutomatically = true;
+    self.searchTxtField.delegate = self;
 
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self dismissKeyboard];
+    [self performSegueWithIdentifier:@"SearchResults" sender:nil];
+    return true;
 }
 
 - (void)browseBtnAction{

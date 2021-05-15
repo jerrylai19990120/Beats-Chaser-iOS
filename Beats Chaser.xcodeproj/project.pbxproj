@@ -26,6 +26,9 @@
 		92B69D23264CA92F00899DEF /* BrowseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D22264CA92F00899DEF /* BrowseVC.m */; };
 		92B69D27264CA93E00899DEF /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D26264CA93E00899DEF /* FavoriteVC.m */; };
 		92B69D2B264CBB4800899DEF /* RoundedCornerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B69D2A264CBB4800899DEF /* RoundedCornerImage.m */; };
+		92CCC83C264FB4AC00051136 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC83B264FB4AC00051136 /* DataService.m */; };
+		92CCC840264FB6CA00051136 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC83F264FB6CA00051136 /* SearchVC.m */; };
+		92CCC844264FB95500051136 /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CCC843264FB95500051136 /* ResultCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,12 @@
 		92B69D26264CA93E00899DEF /* FavoriteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		92B69D29264CBB4800899DEF /* RoundedCornerImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerImage.h; sourceTree = "<group>"; };
 		92B69D2A264CBB4800899DEF /* RoundedCornerImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerImage.m; sourceTree = "<group>"; };
+		92CCC83A264FB4AC00051136 /* DataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		92CCC83B264FB4AC00051136 /* DataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		92CCC83E264FB6CA00051136 /* SearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		92CCC83F264FB6CA00051136 /* SearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		92CCC842264FB95500051136 /* ResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
+		92CCC843264FB95500051136 /* ResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +144,8 @@
 				92B69D1E264C8C4200899DEF /* FavoriteCell.m */,
 				92B69D29264CBB4800899DEF /* RoundedCornerImage.h */,
 				92B69D2A264CBB4800899DEF /* RoundedCornerImage.m */,
+				92CCC842264FB95500051136 /* ResultCell.h */,
+				92CCC843264FB95500051136 /* ResultCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +161,8 @@
 				92B69D22264CA92F00899DEF /* BrowseVC.m */,
 				92B69D25264CA93E00899DEF /* FavoriteVC.h */,
 				92B69D26264CA93E00899DEF /* FavoriteVC.m */,
+				92CCC83E264FB6CA00051136 /* SearchVC.h */,
+				92CCC83F264FB6CA00051136 /* SearchVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,6 +177,8 @@
 		929A981D2645FFBA00467CF7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				92CCC83A264FB4AC00051136 /* DataService.h */,
+				92CCC83B264FB4AC00051136 /* DataService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -239,8 +254,10 @@
 			files = (
 				92B69CFC2649F95900899DEF /* CircularImage.m in Sources */,
 				929A98072645FC8B00467CF7 /* HomeVC.m in Sources */,
+				92CCC844264FB95500051136 /* ResultCell.m in Sources */,
 				929A98012645FC8B00467CF7 /* AppDelegate.m in Sources */,
 				92B69D04264A57F400899DEF /* TopHitsCell.m in Sources */,
+				92CCC840264FB6CA00051136 /* SearchVC.m in Sources */,
 				929A98122645FC8D00467CF7 /* main.m in Sources */,
 				92B69D002649FA1600899DEF /* HomeViewCell.m in Sources */,
 				92B69D27264CA93E00899DEF /* FavoriteVC.m in Sources */,
@@ -253,6 +270,7 @@
 				929A98042645FC8B00467CF7 /* SceneDelegate.m in Sources */,
 				92B69D23264CA92F00899DEF /* BrowseVC.m in Sources */,
 				92B69D17264C859600899DEF /* ArtistCell.m in Sources */,
+				92CCC83C264FB4AC00051136 /* DataService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Beats Chaser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
