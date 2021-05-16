@@ -132,7 +132,6 @@
         NSString *sound8 = [[NSBundle mainBundle] pathForResource:@"TheWeekend" ofType:@"mp3"];
         NSURL *sound8Url = [NSURL fileURLWithPath:sound8];
         
-        
         self.songsList = @[
             [[AVPlayerItem alloc]initWithURL:soundUrl],
             [[AVPlayerItem alloc]initWithURL:sound2Url],
@@ -195,7 +194,6 @@
     BrowseVC *browseVC = [storyboard instantiateViewControllerWithIdentifier:@"BrowseVC"];
     browseVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:browseVC animated:false completion:nil];
-    
 }
 
 
@@ -204,7 +202,6 @@
     FavoriteVC *favVC = [storyboard instantiateViewControllerWithIdentifier:@"FavoriteVC"];
     favVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:favVC animated:false completion:nil];
-    
 }
 
 

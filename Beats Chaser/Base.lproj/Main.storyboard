@@ -1321,11 +1321,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ6-Hn-P1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866.39999999999998" y="79.610194902548727"/>
+            <point key="canvasLocation" x="900" y="80"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DNs-Ez-jiO"/>
+        <segue reference="BAi-Lp-WD9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left.circle" catalog="system" width="128" height="121"/>

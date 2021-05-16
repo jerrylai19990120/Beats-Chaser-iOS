@@ -34,6 +34,7 @@
     
     self.recentCollectionView.delegate = self;
     self.recentCollectionView.dataSource = self;
+    
 }
 
 - (void)homeBtnAction{
@@ -41,7 +42,6 @@
     HomeVC *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
     homeVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:homeVC animated:false completion:nil];
-    
 }
 
 - (void)favoriteBtnAction{
