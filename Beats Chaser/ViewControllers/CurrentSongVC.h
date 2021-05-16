@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UIImage *cover;
 @property (assign) BOOL isPlaying;
 @property (weak, nonatomic) IBOutlet UIImageView *playBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backwardBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *forwardBtn;
 - (void)setupBlurOverlayView;
 - (void)setupAlbumData;
 @end

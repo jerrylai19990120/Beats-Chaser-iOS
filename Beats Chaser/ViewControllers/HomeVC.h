@@ -33,6 +33,7 @@
 @property (assign) int currentPlaying;
 @property (strong, nonatomic) NSArray* songsList;
 @property (strong, nonatomic) NSArray* songs;
+@property (strong, nonatomic) AVPlayerItem *prevItem;
 @property (weak, nonatomic) IBOutlet UILabel *currSongName;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImg;
 @property (weak, nonatomic) IBOutlet UILabel *artistName;
