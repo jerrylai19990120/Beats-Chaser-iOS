@@ -66,4 +66,18 @@
     }
 }
 
+- (IBAction)playBtnPressed:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"Start" object:nil];
+    if([self.playBtn.imageView.image isEqual:[UIImage systemImageNamed:@"play.fill"]]){
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+    }else{
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+    }
+}
+
+
+- (IBAction)nextBtnPressed:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"Next" object:nil];
+}
+
 @end

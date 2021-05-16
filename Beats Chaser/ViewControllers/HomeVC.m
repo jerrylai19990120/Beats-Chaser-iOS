@@ -13,6 +13,7 @@
 #import "FavoriteVC.h"
 #import "DataService.h"
 #import "Song.h"
+#import "CurrentSongVC.h"
 
 @import AVFoundation;
 
@@ -103,10 +104,38 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive:true error:nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    
+    self.isPlaying = false;
     self.currentPlaying = 0;
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(startSong) name:@"Start" object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(nextSong) name:@"Next" object:nil];
+    
 }
+
+- (void)nextSong{
+    if(self.currentPlaying + 1 == self.songs.count){
+        self.currentPlaying = 0;
+    }else{
+        self.currentPlaying++;
+    }
+    [self changeCurrentSongUIWithSong:[self.songs objectAtIndex:self.currentPlaying]];
+    [self.player advanceToNextItem];
+}
+
+- (void)startSong{
+    if(self.isPlaying){
+        self.isPlaying = false;
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+        [self.player pause];
+    }else{
+        self.isPlaying = true;
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+        [self.player play];
+    }
+}
+
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self dismissKeyboard];
@@ -241,6 +270,19 @@
     self.artistName.text = song.artistName;
     self.coverImg.image = song.coverImg;
     self.currSongName.text = song.songName;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    Song *song = [self.songs objectAtIndex:self.currentPlaying];
+    
+    if([segue.identifier isEqualToString:@"SongDetail"]){
+        CurrentSongVC *currVC = segue.destinationViewController;
+        currVC.artist = song.artistName;
+        currVC.cover = song.coverImg;
+        currVC.song = song.songName;
+        currVC.isPlaying = self.isPlaying;
+    }
 }
 
 @end

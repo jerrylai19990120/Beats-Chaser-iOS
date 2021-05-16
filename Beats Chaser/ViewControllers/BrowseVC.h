@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIStackView *homeBtn;
 @property (weak, nonatomic) IBOutlet UICollectionView *artistCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *recentCollectionView;
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIStackView *favoriteBtn;
 @end
 

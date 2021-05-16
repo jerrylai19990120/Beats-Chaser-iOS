@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Song.h"
 
 @interface AppDelegate ()
 
