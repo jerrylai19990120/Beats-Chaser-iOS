@@ -61,15 +61,22 @@
 - (void)previousSong{
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Previous" object:nil];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"PreviousSong" object:nil];
+    [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    delegate.isPlaying = true;
 }
 
 - (void)playBtnPressed{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"ChangeSongStatus" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Start" object:nil];
-    if([self.playBtn.image isEqual:[UIImage systemImageNamed:@"play.circle.fill"]]){
-        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
-    }else{
+    if(delegate.isPlaying){
+        delegate.isPlaying = false;
         [self.playBtn setImage:[UIImage systemImageNamed:@"play.circle.fill"]];
+        [delegate.player pause];
+    }else{
+        delegate.isPlaying = true;
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
+        [delegate.player play];
     }
     
 }

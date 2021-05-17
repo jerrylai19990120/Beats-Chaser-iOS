@@ -27,13 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *browseBtnTxt;
 @property (weak, nonatomic) IBOutlet UIImageView *favoriteBtnImg;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteBtnTxt;
-@property (strong, nonatomic) AVQueuePlayer *player;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
-@property (assign) BOOL isPlaying;
-@property (assign) int currentPlaying;
-@property (strong, nonatomic) NSArray* songsList;
-@property (strong, nonatomic) NSArray* songs;
-@property (strong, nonatomic) AVPlayerItem *prevItem;
 @property (weak, nonatomic) IBOutlet UILabel *currSongName;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImg;
 @property (weak, nonatomic) IBOutlet UILabel *artistName;
