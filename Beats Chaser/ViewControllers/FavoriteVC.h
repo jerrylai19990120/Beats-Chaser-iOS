@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoundedCornerImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIStackView *browseBtn;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property (weak, nonatomic) IBOutlet RoundedCornerImage *coverImg;
+@property (weak, nonatomic) IBOutlet UILabel *currSongName;
+@property (weak, nonatomic) IBOutlet UILabel *artistName;
 
 @end
 

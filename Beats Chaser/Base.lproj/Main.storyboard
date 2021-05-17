@@ -650,8 +650,11 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come Thru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvS-eX-SXP">
-                                        <rect key="frame" x="115" y="16" width="87" height="20.5"/>
+                                        <rect key="frame" x="115" y="16" width="140" height="20.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="Ds1-K3-9b4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -689,7 +692,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ9-l6-2hG">
                                         <rect key="frame" x="17" y="0.0" width="238" height="67"/>
                                         <connections>
-                                            <segue destination="QNJ-Zi-5TV" kind="presentation" id="BAi-Lp-WD9"/>
+                                            <segue destination="QNJ-Zi-5TV" kind="presentation" identifier="SongDetail2" id="BAi-Lp-WD9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -918,6 +921,9 @@
                     </view>
                     <connections>
                         <outlet property="artistCollectionView" destination="Cav-0X-mE8" id="YhF-md-GwL"/>
+                        <outlet property="artistName" destination="bbf-75-OWT" id="t6b-Fe-W2i"/>
+                        <outlet property="coverImg" destination="uPx-Qg-9wR" id="EGL-6B-p2I"/>
+                        <outlet property="currSongName" destination="bvS-eX-SXP" id="Q7C-2s-FGX"/>
                         <outlet property="favoriteBtn" destination="UGD-PL-k0g" id="qtS-lB-nrN"/>
                         <outlet property="homeBtn" destination="ZqM-gK-MPJ" id="MlC-1u-z5b"/>
                         <outlet property="playBtn" destination="r53-yq-Ns6" id="0JV-pb-xk9"/>
@@ -1008,8 +1014,11 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come Thru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0l-Gt-rsg">
-                                        <rect key="frame" x="115" y="16" width="87" height="20.5"/>
+                                        <rect key="frame" x="115" y="16" width="140" height="20.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="GYz-18-hFW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1047,7 +1056,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-Ul-csr">
                                         <rect key="frame" x="17" y="0.0" width="238" height="67"/>
                                         <connections>
-                                            <segue destination="QNJ-Zi-5TV" kind="presentation" id="6wh-75-hPz"/>
+                                            <segue destination="QNJ-Zi-5TV" kind="presentation" identifier="SongDetail3" id="6wh-75-hPz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1196,7 +1205,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="artistName" destination="Tdc-z9-pPh" id="stW-8z-Ql3"/>
                         <outlet property="browseBtn" destination="g3M-ak-n5x" id="Zrp-rX-T6i"/>
+                        <outlet property="coverImg" destination="wAE-q5-hY5" id="Gx8-QT-vVZ"/>
+                        <outlet property="currSongName" destination="E0l-Gt-rsg" id="w0R-ze-Sww"/>
                         <outlet property="homeBtn" destination="gkX-Ar-Aag" id="mc9-ks-IPz"/>
                         <outlet property="playBtn" destination="bD0-8Y-xoP" id="g46-A5-uIp"/>
                         <outlet property="tableView" destination="VKo-fS-2tg" id="Hqx-1s-5jh"/>
@@ -1325,7 +1337,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BAi-Lp-WD9"/>
+        <segue reference="DNs-Ez-jiO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left.circle" catalog="system" width="128" height="121"/>

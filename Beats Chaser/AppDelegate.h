@@ -9,6 +9,11 @@
 @import AVFoundation;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (assign) BOOL isPlaying;
+@property (assign) int currentPlaying;
+@property (strong, nonatomic) NSArray* songsList;
+@property (strong, nonatomic) NSArray* songs;
+@property (strong, nonatomic) AVPlayerItem *prevItem;
+@property (strong, nonatomic) AVQueuePlayer *player;
 @end
 

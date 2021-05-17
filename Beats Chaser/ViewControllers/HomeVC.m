@@ -14,6 +14,7 @@
 #import "DataService.h"
 #import "Song.h"
 #import "CurrentSongVC.h"
+#import "AppDelegate.h"
 
 @import AVFoundation;
 
@@ -26,6 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //set up song view
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
+    if(delegate.isPlaying){
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+    }else{
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+    }
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -109,12 +119,13 @@
 }
 
 - (void)previousSong{
-    if(self.prevItem != nil && self.currentPlaying != 0){
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.prevItem != nil && delegate.currentPlaying != 0){
         
-        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[self.songs objectAtIndex:self.currentPlaying-1] forKey:@"song"];
+        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying-1] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"PreviousItem" object:nil userInfo:songMeta];
         
-        self.songsList = nil;
+        delegate.songsList = nil;
         NSString *sound = [[NSBundle mainBundle] pathForResource:@"ComeThru" ofType:@"mp3"];
         NSURL *soundUrl = [NSURL fileURLWithPath:sound];
         NSString *sound2 = [[NSBundle mainBundle] pathForResource:@"ImGonnaLove" ofType:@"mp3"];
@@ -132,7 +143,7 @@
         NSString *sound8 = [[NSBundle mainBundle] pathForResource:@"TheWeekend" ofType:@"mp3"];
         NSURL *sound8Url = [NSURL fileURLWithPath:sound8];
         
-        self.songsList = @[
+        delegate.songsList = @[
             [[AVPlayerItem alloc]initWithURL:soundUrl],
             [[AVPlayerItem alloc]initWithURL:sound2Url],
             [[AVPlayerItem alloc]initWithURL:sound3Url],
@@ -142,42 +153,43 @@
             [[AVPlayerItem alloc]initWithURL:sound7Url],
             [[AVPlayerItem alloc]initWithURL:sound8Url]
         ];
-        self.songsList = [self.songsList subarrayWithRange:NSMakeRange(self.currentPlaying-1, self.songsList.count-(self.currentPlaying-1))];
-        self.currentPlaying--;
-        self.player = nil;
-        self.player = [[AVQueuePlayer alloc]initWithItems:self.songsList];
-        [self.player play];
-        [self changeCurrentSongUIWithSong:[self.songs objectAtIndex:self.currentPlaying]];
+        delegate.songsList = [delegate.songsList subarrayWithRange:NSMakeRange(delegate.currentPlaying-1, delegate.songsList.count-(delegate.currentPlaying-1))];
+        delegate.currentPlaying--;
+        delegate.player = nil;
+        delegate.player = [[AVQueuePlayer alloc]initWithItems:delegate.songsList];
+        [delegate.player play];
+        [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
     }
 }
 
 - (void)nextSong{
-    if(self.currentPlaying + 1 == self.songs.count){
-        self.currentPlaying = 0;
-        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[self.songs objectAtIndex:self.currentPlaying] forKey:@"song"];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.currentPlaying + 1 == delegate.songs.count){
+        delegate.currentPlaying = 0;
+        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NextItem" object:nil userInfo:songMeta];
         [self restartList];
-        self.prevItem = nil;
+        delegate.prevItem = nil;
     }else{
-        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[self.songs objectAtIndex:self.currentPlaying+1] forKey:@"song"];
+        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying+1] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NextItem" object:nil userInfo:songMeta];
-        self.prevItem = self.player.currentItem;
-        self.currentPlaying++;
-        [self.player advanceToNextItem];
+        delegate.prevItem = delegate.player.currentItem;
+        delegate.currentPlaying++;
+        [delegate.player advanceToNextItem];
     }
-    [self changeCurrentSongUIWithSong:[self.songs objectAtIndex:self.currentPlaying]];
+    [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
 }
 
 - (void)startSong{
-    
-    if(self.isPlaying){
-        self.isPlaying = false;
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.isPlaying){
+        delegate.isPlaying = false;
         [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
-        [self.player pause];
+        [delegate.player pause];
     }else{
-        self.isPlaying = true;
+        delegate.isPlaying = true;
         [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
-        [self.player play];
+        [delegate.player play];
     }
 }
 
@@ -288,27 +300,32 @@
 
 
 - (IBAction)playBtnPressed:(id)sender {
-    if(self.isPlaying){
-        self.isPlaying = false;
+
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.isPlaying){
+        delegate.isPlaying = false;
         [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
-        [self.player pause];
+        [delegate.player pause];
     }else{
-        self.isPlaying = true;
+        delegate.isPlaying = true;
         [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
-        [self.player play];
-        
+        [delegate.player play];
     }
+    
 }
 
 - (IBAction)nextBtnPressed:(id)sender {
-    if(self.currentPlaying + 1 == self.songs.count){
-        self.currentPlaying = 0;
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.currentPlaying + 1 == delegate.songs.count){
+        delegate.currentPlaying = 0;
         [self restartList];
     }else{
-        self.currentPlaying++;
-        [self.player advanceToNextItem];
+        delegate.currentPlaying++;
+        [delegate.player advanceToNextItem];
     }
-    [self changeCurrentSongUIWithSong:[self.songs objectAtIndex:self.currentPlaying]];
+    
+    [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
 }
 
 - (void)changeCurrentSongUIWithSong:(Song *)song{
@@ -318,15 +335,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    Song *song = [self.songs objectAtIndex:self.currentPlaying];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    Song *song = [delegate.songs objectAtIndex:delegate.currentPlaying];
     
     if([segue.identifier isEqualToString:@"SongDetail"]){
         CurrentSongVC *currVC = segue.destinationViewController;
         currVC.artist = song.artistName;
         currVC.cover = song.coverImg;
         currVC.song = song.songName;
-        currVC.isPlaying = self.isPlaying;
+        currVC.isPlaying = delegate.isPlaying;
     }
 }
 
@@ -347,6 +364,7 @@
 
 - (void)restartList{
     
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSString *sound = [[NSBundle mainBundle] pathForResource:@"ComeThru" ofType:@"mp3"];
     NSURL *soundUrl = [NSURL fileURLWithPath:sound];
     NSString *sound2 = [[NSBundle mainBundle] pathForResource:@"ImGonnaLove" ofType:@"mp3"];
@@ -364,8 +382,8 @@
     NSString *sound8 = [[NSBundle mainBundle] pathForResource:@"TheWeekend" ofType:@"mp3"];
     NSURL *sound8Url = [NSURL fileURLWithPath:sound8];
     
-    self.songsList = nil;
-    self.songsList = @[
+    delegate.songsList = nil;
+    delegate.songsList = @[
         [[AVPlayerItem alloc]initWithURL:soundUrl],
         [[AVPlayerItem alloc]initWithURL:sound2Url],
         [[AVPlayerItem alloc]initWithURL:sound3Url],
@@ -376,8 +394,8 @@
         [[AVPlayerItem alloc]initWithURL:sound8Url]
     ];
     
-    self.player = nil;
-    self.player = [[AVQueuePlayer alloc]initWithItems:self.songsList];
-    [self.player play];
+    delegate.player = nil;
+    delegate.player = [[AVQueuePlayer alloc]initWithItems:delegate.songsList];
+    [delegate.player play];
 }
 @end

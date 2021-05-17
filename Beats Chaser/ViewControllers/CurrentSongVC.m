@@ -7,6 +7,7 @@
 
 #import "CurrentSongVC.h"
 #import "Song.h"
+#import "AppDelegate.h"
 
 @interface CurrentSongVC ()
 
@@ -54,13 +55,16 @@
 
 - (void)nextSong{
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Next" object:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"NextSong" object:nil];
 }
 
 - (void)previousSong{
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Previous" object:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"PreviousSong" object:nil];
 }
 
 - (void)playBtnPressed{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"ChangeSongStatus" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Start" object:nil];
     if([self.playBtn.image isEqual:[UIImage systemImageNamed:@"play.circle.fill"]]){
         [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
