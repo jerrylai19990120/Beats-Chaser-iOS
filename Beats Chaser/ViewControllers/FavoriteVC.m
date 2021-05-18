@@ -72,6 +72,12 @@
     self.artistName.text = song.artistName;
     self.coverImg.image = song.coverImg;
     self.currSongName.text = song.songName;
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.isPlaying){
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+    }else{
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)browseBtnAction{
@@ -120,8 +126,20 @@
 
 
 - (IBAction)nextBtnPressed:(id)sender {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    /*AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Next" object:nil];
+    [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];*/
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.currentPlaying + 1 == delegate.songs.count){
+        delegate.currentPlaying = 0;
+        [self restartList];
+        delegate.prevItem = nil;
+    }else{
+        delegate.prevItem = delegate.player.currentItem;
+        delegate.currentPlaying++;
+        [delegate.player advanceToNextItem];
+    }
+    
     [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
 }
 
@@ -139,5 +157,41 @@
     }
 }
 
+- (void)restartList{
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    NSString *sound = [[NSBundle mainBundle] pathForResource:@"ComeThru" ofType:@"mp3"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:sound];
+    NSString *sound2 = [[NSBundle mainBundle] pathForResource:@"ImGonnaLove" ofType:@"mp3"];
+    NSURL *sound2Url = [NSURL fileURLWithPath:sound2];
+    NSString *sound3 = [[NSBundle mainBundle] pathForResource:@"KissMore" ofType:@"mp3"];
+    NSURL *sound3Url = [NSURL fileURLWithPath:sound3];
+    NSString *sound4 = [[NSBundle mainBundle] pathForResource:@"ShowMeLove" ofType:@"mp3"];
+    NSURL *sound4Url = [NSURL fileURLWithPath:sound4];
+    NSString *sound5 = [[NSBundle mainBundle] pathForResource:@"GoCrazy" ofType:@"mp3"];
+    NSURL *sound5Url = [NSURL fileURLWithPath:sound5];
+    NSString *sound6 = [[NSBundle mainBundle] pathForResource:@"MyType" ofType:@"mp3"];
+    NSURL *sound6Url = [NSURL fileURLWithPath:sound6];
+    NSString *sound7 = [[NSBundle mainBundle] pathForResource:@"BackToTheStreets" ofType:@"mp3"];
+    NSURL *sound7Url = [NSURL fileURLWithPath:sound7];
+    NSString *sound8 = [[NSBundle mainBundle] pathForResource:@"TheWeekend" ofType:@"mp3"];
+    NSURL *sound8Url = [NSURL fileURLWithPath:sound8];
+    
+    delegate.songsList = nil;
+    delegate.songsList = @[
+        [[AVPlayerItem alloc]initWithURL:soundUrl],
+        [[AVPlayerItem alloc]initWithURL:sound2Url],
+        [[AVPlayerItem alloc]initWithURL:sound3Url],
+        [[AVPlayerItem alloc]initWithURL:sound4Url],
+        [[AVPlayerItem alloc]initWithURL:sound5Url],
+        [[AVPlayerItem alloc]initWithURL:sound6Url],
+        [[AVPlayerItem alloc]initWithURL:sound7Url],
+        [[AVPlayerItem alloc]initWithURL:sound8Url]
+    ];
+    
+    delegate.player = nil;
+    delegate.player = [[AVQueuePlayer alloc]initWithItems:delegate.songsList];
+    [delegate.player play];
+}
 
 @end

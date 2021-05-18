@@ -77,7 +77,18 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(previousSong) name:@"Previous" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playPauseSong) name:@"ChangeSongStatus" object:nil];
     
+    
+}
+
+- (void)playPauseSong{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.isPlaying){
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+    }else{
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)previousSong{
@@ -126,19 +137,21 @@
 
 - (void)nextSong{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    if(delegate.currentPlaying + 1 == delegate.songs.count){
-        delegate.currentPlaying = 0;
-        [self restartList];
+    /*if(delegate.currentPlaying == delegate.songs.count){
+        //delegate.currentPlaying = 0;
+        //[self restartList];
         NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NextItem" object:nil userInfo:songMeta];
-        delegate.prevItem = nil;
+        //delegate.prevItem = nil;
     }else{
-        delegate.prevItem = delegate.player.currentItem;
-        [delegate.player advanceToNextItem];
+        //delegate.prevItem = delegate.player.currentItem;
+        //[delegate.player advanceToNextItem];
         NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying+1] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NextItem" object:nil userInfo:songMeta];
-        delegate.currentPlaying++;
-    }
+        //delegate.currentPlaying++;
+    }*/
+    //NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying+1] forKey:@"song"];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"NextItem" object:nil userInfo:songMeta];
     [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
 }
 
@@ -291,6 +304,12 @@
 }
 
 - (void)changeCurrentSongUIWithSong:(Song *)song{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if(delegate.isPlaying){
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.fill"] forState:UIControlStateNormal];
+    }else{
+        [self.playBtn setImage:[UIImage systemImageNamed:@"play.fill"] forState:UIControlStateNormal];
+    }
     self.artistName.text = song.artistName;
     self.coverImg.image = song.coverImg;
     self.currSongName.text = song.songName;
