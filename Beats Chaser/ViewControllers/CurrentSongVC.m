@@ -40,10 +40,10 @@
 }
 
 - (void)changeSongUIPrev:(NSNotification *)notif{
-    Song *song = (Song *)[[notif userInfo] valueForKey:@"song"];
+    /*Song *song = (Song *)[[notif userInfo] valueForKey:@"song"];
     self.coverImg.image = song.coverImg;
     self.artistName.text = song.artistName;
-    self.songName.text = song.songName;
+    self.songName.text = song.songName;*/
 }
 
 - (void)changeSongUINext:(NSNotification *)notif{
@@ -75,11 +75,61 @@
 }
 
 - (void)previousSong{
+    /*AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    delegate.isPlaying = true;*/
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Previous" object:nil];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"PreviousSong" object:nil];
     [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    delegate.isPlaying = true;
+    if(delegate.prevItem != nil && delegate.currentPlaying != 0){
+        
+        NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying-1] forKey:@"song"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PreviousItem" object:nil userInfo:songMeta];
+        
+        delegate.songsList = nil;
+        NSString *sound = [[NSBundle mainBundle] pathForResource:@"ComeThru" ofType:@"mp3"];
+        NSURL *soundUrl = [NSURL fileURLWithPath:sound];
+        NSString *sound2 = [[NSBundle mainBundle] pathForResource:@"ImGonnaLove" ofType:@"mp3"];
+        NSURL *sound2Url = [NSURL fileURLWithPath:sound2];
+        NSString *sound3 = [[NSBundle mainBundle] pathForResource:@"KissMore" ofType:@"mp3"];
+        NSURL *sound3Url = [NSURL fileURLWithPath:sound3];
+        NSString *sound4 = [[NSBundle mainBundle] pathForResource:@"ShowMeLove" ofType:@"mp3"];
+        NSURL *sound4Url = [NSURL fileURLWithPath:sound4];
+        NSString *sound5 = [[NSBundle mainBundle] pathForResource:@"GoCrazy" ofType:@"mp3"];
+        NSURL *sound5Url = [NSURL fileURLWithPath:sound5];
+        NSString *sound6 = [[NSBundle mainBundle] pathForResource:@"MyType" ofType:@"mp3"];
+        NSURL *sound6Url = [NSURL fileURLWithPath:sound6];
+        NSString *sound7 = [[NSBundle mainBundle] pathForResource:@"BackToTheStreets" ofType:@"mp3"];
+        NSURL *sound7Url = [NSURL fileURLWithPath:sound7];
+        NSString *sound8 = [[NSBundle mainBundle] pathForResource:@"TheWeekend" ofType:@"mp3"];
+        NSURL *sound8Url = [NSURL fileURLWithPath:sound8];
+        
+        delegate.songsList = @[
+            [[AVPlayerItem alloc]initWithURL:soundUrl],
+            [[AVPlayerItem alloc]initWithURL:sound2Url],
+            [[AVPlayerItem alloc]initWithURL:sound3Url],
+            [[AVPlayerItem alloc]initWithURL:sound4Url],
+            [[AVPlayerItem alloc]initWithURL:sound5Url],
+            [[AVPlayerItem alloc]initWithURL:sound6Url],
+            [[AVPlayerItem alloc]initWithURL:sound7Url],
+            [[AVPlayerItem alloc]initWithURL:sound8Url]
+        ];
+        delegate.songsList = [delegate.songsList subarrayWithRange:NSMakeRange(delegate.currentPlaying-1, delegate.songsList.count-(delegate.currentPlaying-1))];
+        delegate.currentPlaying--;
+        delegate.player = nil;
+        delegate.player = [[AVQueuePlayer alloc]initWithItems:delegate.songsList];
+        [delegate.player play];
+        
+        Song *song = [delegate.songs objectAtIndex:delegate.currentPlaying];
+        self.coverImg.image = song.coverImg;
+        self.artistName.text = song.artistName;
+        self.songName.text = song.songName;
+        delegate.isPlaying = true;
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"Previous" object:nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"PreviousSong" object:nil];
+        [self.playBtn setImage:[UIImage systemImageNamed:@"pause.circle.fill"]];
+        //[self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
+    }
 }
 
 - (void)restartList{

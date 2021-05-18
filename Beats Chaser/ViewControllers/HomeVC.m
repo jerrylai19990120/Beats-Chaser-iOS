@@ -93,7 +93,7 @@
 
 - (void)previousSong{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    if(delegate.prevItem != nil && delegate.currentPlaying != 0){
+    /*if(delegate.prevItem != nil && delegate.currentPlaying != 0){
         
         NSDictionary *songMeta = [NSDictionary dictionaryWithObject:[delegate.songs objectAtIndex:delegate.currentPlaying-1] forKey:@"song"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"PreviousItem" object:nil userInfo:songMeta];
@@ -132,7 +132,8 @@
         delegate.player = [[AVQueuePlayer alloc]initWithItems:delegate.songsList];
         [delegate.player play];
         [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
-    }
+    }*/
+    [self changeCurrentSongUIWithSong:[delegate.songs objectAtIndex:delegate.currentPlaying]];
 }
 
 - (void)nextSong{
